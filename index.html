@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AutoSeg">
+  <meta name="keywords" content="AutoSeg: Auto-Vocabulary Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoSeg: Auto-Vocabulary Segmentation</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G8Y31BZKY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0G8Y31BZKY');
+</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/css/bulma.min.css">
+  <link rel="stylesheet" href="./src/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./src/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./src/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./src/css/index.css">
+  <link rel="icon" href="./src/images/atlas_lab_logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./src/js/fontawesome.all.min.js"></script>
+  <script src="./src/js/bulma-carousel.min.js"></script>
+  <script src="./src/js/bulma-slider.min.js"></script>
+  <script src="./src/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AutoSeg: Auto-Vocabulary Segmentation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://codename1995.github.io">Osman Ülger</a><sup>1</sup>*,
+            </span>
+            <span class="author-block">
+              <a href="https://ozzyou.github.io">Maksymilian Kulicki</a><sup>2</sup>*,
+            </span>
+            <span class="author-block">
+              <a href="https://fkariminejadasl.github.io">Yuki Asano</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.inf.ethz.ch/moswald/">Martin R. Oswald</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-institutions">
+            <span class="author-block"><sup>1</sup> University of Amsterdam</span>,
+            <span class="author-block"><sup>2</sup> Polish Academy of Science</span>,
+            <span class="author-block"><sup>3</sup> IDEAS NCBR</span>,
+            <span class="author-block"><sup>4</sup> University of Technology Nuremberg</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">* equal contribution</span>
+          </div>
+          <div class="is-size-5 publication-venue">
+            <span>In proceedings of <a href="https://iccv.thecvf.com/" target="_blank">International Conference on Computer Vision (ICCV)</a>, 2025</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.04539"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ozzyou/AutoSeg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+<!--              &lt;!&ndash; Poster Link. &ndash;&gt;-->
+<!--              <span class="link-block">-->
+<!--                <a href=""-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fas fa-image"></i>-->
+<!--                  </span>-->
+<!--                  <span>Poster</span>-->
+<!--                </a>-->
+<!--              </span>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="subtitle has-text-centered">
+              TL;DR: We present AutoSeg, a framework for Auto-Vocabulary Semantic Segmentation (AVS) that autonomously discovers class names from images using BLIP embeddings and segments them, eliminating the need for predefined vocabularies. We further introduce LAVE, an LLM-based evaluator for open-ended predictions.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="margin-top: -5%;" class="content has-text-centered">
+          <img src="src/images/teaser.png" alt="Teaser" width="100%">
+          <p class="content has-text-justified">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Open-Vocabulary Segmentation (OVS) methods are capable of performing semantic segmentation without relying on a fixed vocabulary, and in some cases, without training or fine-tuning. However, OVS methods typically require a human in the loop to specify the vocabulary based on the task or dataset at hand. In this paper, we introduce Auto-Vocabulary Semantic Segmentation (AVS), advancing open-ended image understanding by eliminating the necessity to predefine object categories for segmentation. Our approach, AutSeg, presents a framework that autonomously identifies relevant class names using semantically enhanced BLIP embeddings and segments them afterwards. Given that open-ended object category predictions cannot be directly compared with a fixed ground truth, we develop a Large Language Model-based Auto-Vocabulary Evaluator (LAVE) to efficiently evaluate the automatically generated classes and their corresponding segments. With AVS, our method sets new benchmarks on datasets PASCAL VOC, Context, ADE20K, and Cityscapes, while showing competitive performance to OVS methods that require specified class names.
+          </p><br>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- AVS Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Auto-Vocabulary Segmentation (AVS) Setting</h2>
+        <div class="content has-text-centered">
+          <img src="src/images/different_segmentation_tasks.png" alt="Method Overview" width="100%">
+          <p class="content has-text-justified"><br>
+          Auto-Vocabulary Segmentation (AVS) is a new approach to semantic segmentation that removes the need for predefined or user-specified vocabularies. Traditional methods either rely on fixed class sets from annotated datasets (fixed-vocabulary segmentation) or require the user to provide prompts (open-vocabulary segmentation). In contrast, AVS automatically generates the vocabulary directly from the scene and applies it at the pixel level. This allows segmentation of any object without prompts, predefined class names, extra data, or retraining, making it scalable and practical for real-world tasks where the relevant categories are unknown in advance.
+          </p><br>
+        </div>
+      </div>
+    </div>
+    <!--/ Method Overview. -->
+
+    <!-- Method Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">AutoSeg Overview</h2>
+        <div class="content has-text-centered">
+          <img src="src/images/pipeline.png" alt="Method Overview" width="100%">
+          <p class="content has-text-justified"><br>
+            The image above shows an overview of the method. AutoSeg begins by encoding an input image with a pre-trained BLIP vision–language model. To better capture less salient objects, the embeddings are refined with our BBoost module, which performs clustering, alignment, and denoising. These enhanced embeddings are then decoded into captions, from which we extract a noun-level vocabulary specific to the scene. This automatically generated vocabulary is finally passed to the segmentation module, enabling precise pixel-level segmentation without predefined labels or user input.
+          </p><br>
+        </div>
+      </div>
+    </div>
+    <!--/ Method Overview. -->
+
+    <!-- BBoost Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-centered">
+          <img src="src/images/vlm_ablation.png" alt="Method Overview" width="100%">
+          <p class="content has-text-justified"><br>
+            BBoost is designed to refine vision–language embeddings so that objects, including those that are less salient, can be captured more reliably. The process begins with clustering, where BLIP patch embeddings are grouped at multiple image resolutions using k-means with different values of 𝑘. This captures semantic groupings at various granularities and can be repeated across cycles for added robustness. Cross-clustering consistency aligns the different clustering runs by applying Hungarian matching and aggregating their outcomes into soft cluster assignments. This step ensures that clusters remain semantically consistent across granularities. Cluster denoising refines these assignments with a Conditional Random Field and neighborhood majority filtering, producing smoother, more coherent clusters that form the basis for precise vocabulary generation. The image above visualizes the BBoost embeddings after semantic clustering (second column). The third and fourth column show the difference between open-vocabulary segmentation with captions generated by an out-of-the-box BLIP encoder-decoder versus AutoSeg. Below we highlight some of our favorite outputs.
+          </p><br>
+          <img src="src/images/qualitative.png" alt="Method Overview" width="100%">
+
+        </div>
+      </div>
+    </div>
+    <!--/ Method Overview. -->
+
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{ulger2025autoseg,
+      title={Auto-Vocabulary Semantic Segmentation},
+      author={and Osman Ülger and Maksymilian Kulicki and Yuki Asano and Martin R. Oswald},
+      booktitle={International Conference on Computer Vision (CVPR)},
+      year={2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
